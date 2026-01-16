@@ -794,13 +794,14 @@ a {
 }
 
 .instagram-icon {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 24px;
     height: 24px;
     font-size: 1.1rem;
     animation: instaPulse 2s ease-in-out infinite;
+    margin: 0 auto;
 }
 
 .instagram-btn:hover .instagram-icon {
@@ -810,6 +811,47 @@ a {
 .btn-text {
     font-weight: 700;
     letter-spacing: 0.5px;
+}
+
+/* Modern icon-only Instagram button for extra-curricular section */
+.instagram-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background: transparent;
+    color: #e4405f;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    margin: 0.5rem auto 0;
+}
+
+.instagram-btn-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: none;
+}
+
+.instagram-btn-icon:hover {
+    background: #e4405f;
+    color: white;
+    transform: scale(1.05);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instagram-btn-icon:hover::before {
+    left: 100%;
 }
 
 @keyframes instaPulse {
@@ -1085,4 +1127,14 @@ a {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
     box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Blur effect for sensitive information */
+.blur-text {
+    filter: blur(4px);
+    transition: filter 0.3s ease;
+}
+
+.blur-text:hover {
+    filter: blur(0);
 }
